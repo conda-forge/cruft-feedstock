@@ -1,11 +1,11 @@
-About cruft
-===========
+About cruft-feedstock
+=====================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/cruft-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/cruft/cruft
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/cruft-feedstock/blob/main/LICENSE.txt)
 
 Summary: Maintain all the necessary boilerplate for packaging and building projects separate from the code you intentionally write.
 

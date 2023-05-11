@@ -1,5 +1,5 @@
 {% set name = "cruft" %}
-{% set version = "2.14.0" %}
+{% set version = "2.15.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/cruft-{{ version }}.tar.gz
-  sha256: ba3d976de1cad437b6a92239b6ec844ea8547e09de796ef505d320c356c45de5
+  sha256: 9802af66037418655e7e4b6f30b531591e0761939b3ff5dd45d27c3a3f588abe
 
 build:
   noarch: python
@@ -19,15 +19,20 @@ build:
 requirements:
   host:
     - python
-    - pip
     - poetry-core >=1.0.8
+    - pip
   run:
     - python >=3.7
-    - click >=7.1.2
     - cookiecutter >=1.7
     - gitpython >=3.0
+    - toml >=0.10
     - typer >=0.4.0
-    - importlib-metadata >=2.0.0,<5.0.0
+    - click >=7.1.2
+    # In order to keep this recipe noarch and to prevent the upper bound
+    # on importlib-metadata, simply require python >=3.8.
+    - python >=3.8
+    # - importlib-metadata >=2.0.0,<5.0.0
+
 
 test:
   requires:

@@ -1,13 +1,13 @@
 {% set name = "cruft" %}
-{% set version = "2.15.0" %}
+{% set version = "2.16.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/cruft-{{ version }}.tar.gz
-  sha256: 9802af66037418655e7e4b6f30b531591e0761939b3ff5dd45d27c3a3f588abe
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/cruft-{{ version }}.tar.gz
+  sha256: 184662853fbc1c16c0137fe0e9444e0cbe95e40362f5ebb2d9fae33d9223e73f
 
 build:
   noarch: python
@@ -18,24 +18,20 @@ build:
 
 requirements:
   host:
-    - python
-    - poetry-core >=1.0.8
+    - python {{ python_min }}
+    - hatchling
     - pip
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - cookiecutter >=1.7
     - gitpython >=3.0
     - toml >=0.10
     - typer >=0.4.0
     - click >=7.1.2
-    # In order to keep this recipe noarch and to prevent the upper bound
-    # on importlib-metadata, simply require python >=3.8.
-    - python >=3.8
-    # - importlib-metadata >=2.0.0,<5.0.0
-
 
 test:
   requires:
+    - python {{ python_min }}
     - pip
     - git
   imports:
@@ -62,4 +58,4 @@ extra:
   recipe-maintainers:
     - maresb
     - Zeitsperre
-    - samj1912
+    - sambhav

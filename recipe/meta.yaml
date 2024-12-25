@@ -1,13 +1,13 @@
 {% set name = "cruft" %}
-{% set version = "2.15.0" %}
+{% set version = "2.16.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/cruft-{{ version }}.tar.gz
-  sha256: 9802af66037418655e7e4b6f30b531591e0761939b3ff5dd45d27c3a3f588abe
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/cruft-{{ version }}.tar.gz
+  sha256: 184662853fbc1c16c0137fe0e9444e0cbe95e40362f5ebb2d9fae33d9223e73f
 
 build:
   noarch: python
